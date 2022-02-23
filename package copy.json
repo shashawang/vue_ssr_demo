@@ -1,0 +1,57 @@
+{
+  "name": "vue_ssr_demo1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build:client": "node build/build.js",
+    "build:server": "cross-env NODE_ENV=production webpack --config build/webpack.server.conf.js --progress --hide-modules",
+    "build": "rimraf dist && npm run build:client && npm run build:server",
+    "lint": "vue-cli-service lint",
+    "start": "npm run dev",
+    "start-prod": "node server.js"
+  },
+  "dependencies": {
+    "@vue/server-renderer": "^3.2.31",
+    "core-js": "^3.8.3",
+    "express": "^4.17.3",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "shelljs": "^0.8.5",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.12",
+    "webpack": "^5.69.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "cross-env": "^7.0.3"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
